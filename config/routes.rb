@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :movies
-  resources :genres
-  resources :bodytypes
-  resources :features
+  resources :movies, only: [:index, :show]
+  resources :genres, only: [:index, :show]
+  resources :bodytypes, only: [:index, :show]
+  resources :features, only: [:index, :show]
   resources :actors
   get 'fallback/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
