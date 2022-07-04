@@ -1,0 +1,2 @@
+class BodytypesController < ApplicationController
+end
