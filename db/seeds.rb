@@ -1,16 +1,18 @@
 require "faker";
-actors = []
+
 10.times do
-    actors.push( Actor.create!(name: Faker::Name.name, age: Faker::Number.between(from: 20, to: 80), gender: Faker::Gender.binary_type ))
+ Actor.create(name: Faker::Name.name, age: Faker::Number.between(from: 20, to: 80), gender: Faker::Gender.binary_type )
 end
+puts "Actors seeded"
 
-genres = []
 10.times do
-    genres.push( Genre.create!(name: Faker::Emotion.noun ))
+    Genre.create(name: Faker::Emotion.noun )
 end
+puts "Genres made"
 
 10.times do
-
-   movies = Movie.create!(name: Faker::Name.name, release_year: Faker::Date.between( from: 20.years.ago, to: Date.today ))
+Movie.create(name: Faker::Movie.title, release_year: Faker::Date.between(from: '2000-01-01', to: '2021-12-31'), actor_id: Actor.all.sample, genre_id: Genre.all.sample )
 
 end 
+
+puts "seeding done!"
