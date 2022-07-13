@@ -1,5 +1,5 @@
 class Actor < ApplicationRecord
-    has_many :bodytype
+    has_many :bodytypes
     has_many :features, through: :bodytype
 
     has_many :movies

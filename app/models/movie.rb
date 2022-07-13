@@ -1,4 +1,4 @@
 class Movie < ApplicationRecord
-  belongs_to :actor
-  belongs_to :genre
+  has_many :actors
+  has_one :genre
 end

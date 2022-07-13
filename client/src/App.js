@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ActorList from "./Components/ActorList";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,8 +19,11 @@ function App() {
           <Route path="/testing">
             <h1>Test Route</h1>
           </Route>
-          <Route path="/">
-            <h1>Page Count: {count}</h1>
+          <Route exact="/">
+            <h1>It's Morbin' Time: {count}</h1>
+          </Route>
+          <Route path="/actors">
+            <ActorList/>
           </Route>
         </Switch>
       </div>
